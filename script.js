@@ -44,4 +44,82 @@ for (let i = 0; i<bike.length; i++){
     lighterBike = bike[i]
   }
 }
+
 document.getElementById('bike').innerHTML = `La bici più leggera è la ${lighterBike.name} `
+
+
+/* Snack 2
+  - creo il mio array di oggetti con le proprietà indicate
+  - creo una funzione che genera numeri random e vado a inserire questi numeri come valore delle proprietà non compilate
+  - stampo in console un nuovo aarray che abbia come proprietà solo nome e falli subiti
+*/ 
+
+//creo l'array iniziale
+
+const teams = [
+  {
+    name: 'juventus',
+    points: 0,
+    fowl: 0
+
+  },
+  {
+    name: 'milan',
+    points: 0,
+    fowl: 0
+
+  },
+  {
+    name: 'napoli',
+    points: 0,
+    fowl: 0
+
+  },
+  {
+    name: 'inter',
+    points: 0,
+    fowl: 0
+
+  },
+  {
+    name: 'atalanta',
+    points: 0,
+    fowl: 0
+
+  }
+]
+
+
+
+// creo una funzione che genera numeri random dato un range
+
+function randomNumbers(min,max){
+  randomNumber = Math.floor(Math.random() * (max - min + 1) + min)
+  return randomNumber
+}
+
+// ciclo gli elementi dell'array e vado a sovrascrivere i valori di points e fowl con un numero random
+
+for (let team of teams){
+  team.points = randomNumbers(0,30);
+  team.fowl = randomNumbers(0,8);
+}
+
+// creo il secondo array
+
+let teamsArray = [];
+
+// ciclo gli elementi di teams e inserisco a ogni ciclo le proprietà richieste nell'ggetto vuoto che a sua volta pusho a ogni ciclo nell'array vuoto
+
+for(let i = 0; i < teams.length; i++){
+  let teamsObject = {}
+  teamsObject.name = teams[i].name
+  teamsObject.points = teams[i].points
+  teamsArray.push(teamsObject)
+}
+
+//stampo in console entrambi gli array
+
+console.log(teams)
+console.log(teamsArray)
+
