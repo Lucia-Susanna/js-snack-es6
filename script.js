@@ -114,7 +114,7 @@ let teamsArray = [];
 for(let i = 0; i < teams.length; i++){
   let teamsObject = {}
   teamsObject.name = teams[i].name
-  teamsObject.points = teams[i].points
+  teamsObject.fowl = teams[i].fowl
   teamsArray.push(teamsObject)
 }
 
@@ -122,4 +122,20 @@ for(let i = 0; i < teams.length; i++){
 
 console.log(teams)
 console.log(teamsArray)
+
+
+
+/* Snack 3
+ Scrivere una funzione che accetti tre argomenti, un array e due numeri (a più piccolo di b).
+ La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due nu
+*/
+
+function arraySelection (array, min, max){
+   selectedArray = array.slice(min,max)
+   return selectedArray
+}
+
+
+selectedBike = arraySelection(bike, 2, 5)
+console.log(selectedBike)
 
